@@ -15,7 +15,7 @@ describe('tweet routes', () => {
     beforeAll(() => {
         return mongoose.connect('mongodb://localhost:27017/tweets', {
             useFindAndModify: false,
-            useNewUrlParse: true,
+            useNewUrlParser: true,
             useCreateIndex: true
         });
     });
@@ -37,7 +37,6 @@ describe('tweet routes', () => {
                     });
             })
             .then(createdTweet => {
-                console.log(createdTweet.body)
                 expect(createdTweet.body).toEqual({
                     user: expect.any(String),
                     body: 'my first tweet',
@@ -53,7 +52,6 @@ describe('tweet routes', () => {
                     .get('/tweets')
             })
             .then(res => {
-                console.log(res.body);
                 expect(res.body).toHaveLength(1);
             });
     })

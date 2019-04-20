@@ -54,7 +54,6 @@ describe('User routes', () => {
                     .get(`/users/${createdUser._id}`)
             })
             .then(returnedTweet => {
-                console.log('RETURNED TWEET', returnedTweet.body);
                 expect(returnedTweet.body).toEqual({
                     handle: 'Some',
                     image: 'Something',
@@ -73,7 +72,6 @@ describe('User routes', () => {
                     })
             })
             .then(updatedUser => {
-                console.log('UDATED USER', updatedUser.body)
                 expect(updatedUser.body).toEqual({
                     handle: 'New',
                     image: 'Something',
