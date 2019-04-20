@@ -15,7 +15,7 @@ describe('tweet routes', () => {
     beforeAll(() => {
         return mongoose.connect('mongodb://localhost:27017/tweets', {
             useFindAndModify: false,
-            useNewUrlParser: true,
+            useNewUrlParse: true,
             useCreateIndex: true
         });
     });
